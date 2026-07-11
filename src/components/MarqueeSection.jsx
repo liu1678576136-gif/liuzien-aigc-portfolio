@@ -78,8 +78,8 @@ const mediaItems = [
     type: "image",
   },
   {
-    src: "/assets/marquee/cancer-cake-motion.gif",
-    label: "CANCER CAKE MOTION",
+    src: "/assets/marquee/cancer-cake-poster.jpg",
+    label: "CANCER CAKE POSTER",
     type: "image",
   },
   {
