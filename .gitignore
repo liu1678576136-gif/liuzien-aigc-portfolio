@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.log
+portfolio-preview-*.png
+portfolio-*.png
+.chrome-verify/
+.chrome-motion-check/
+.chrome-video-analysis/
+output/
+project-pin-check.png
+video-motion-contact-sheet.jpg

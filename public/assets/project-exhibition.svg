@@ -1,0 +1,10 @@
+<svg width="1400" height="875" viewBox="0 0 1400 875" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="875" fill="#070A0B"/>
+  <path d="M134 690L314 230H1086L1266 690H134Z" fill="#0F1717" stroke="#DDE9E5" stroke-opacity=".14"/>
+  <path d="M314 230H1086V690H314V230Z" fill="#131C1C"/>
+  <path d="M392 306H674V610H392V306Z" fill="#DCE8E4"/>
+  <path d="M732 306H1008V434H732V306ZM732 482H1008V610H732V482Z" fill="#0A0E0F" stroke="#8CEBD4" stroke-opacity=".28"/>
+  <path d="M430 354H636M430 416H590M430 478H616M770 362H960M770 538H946" stroke="#8CEBD4" stroke-opacity=".54" stroke-width="5"/>
+  <path d="M134 690H1266M314 230L134 690M1086 230L1266 690" stroke="#EDF4F0" stroke-opacity=".18" stroke-width="3"/>
+  <text x="134" y="170" fill="#EDF4F0" fill-opacity=".38" font-family="Bahnschrift, Arial" font-size="34">EXHIBITION MATERIAL</text>
+</svg>

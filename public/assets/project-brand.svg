@@ -1,0 +1,11 @@
+<svg width="1400" height="875" viewBox="0 0 1400 875" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="875" fill="#080B0C"/>
+  <rect x="72" y="72" width="1256" height="731" fill="#111717" stroke="#DDE9E5" stroke-opacity=".14"/>
+  <path d="M264 214H630V650H264V214Z" fill="#DCE8E4"/>
+  <path d="M298 250H596V614H298V250Z" fill="#0A0E0F"/>
+  <path d="M742 236H1128M742 310H1030M742 384H1188M742 600H946" stroke="#8CEBD4" stroke-opacity=".55" stroke-width="6"/>
+  <path d="M742 460H1188M742 512H1086" stroke="#EDF4F0" stroke-opacity=".22" stroke-width="3"/>
+  <circle cx="447" cy="431" r="108" stroke="#8CEBD4" stroke-opacity=".55" stroke-width="3"/>
+  <path d="M391 431H503M447 375V487" stroke="#8CEBD4" stroke-opacity=".72" stroke-width="4"/>
+  <text x="742" y="677" fill="#EDF4F0" fill-opacity=".42" font-family="Bahnschrift, Arial" font-size="38">BRAND SYSTEM</text>
+</svg>

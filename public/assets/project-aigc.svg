@@ -1,0 +1,10 @@
+<svg width="1400" height="875" viewBox="0 0 1400 875" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="875" fill="#060909"/>
+  <rect x="84" y="86" width="1232" height="703" fill="#0D1313" stroke="#DDE9E5" stroke-opacity=".14"/>
+  <path d="M208 524C327 340 465 248 622 248C779 248 930 340 1076 524C930 622 779 671 622 671C465 671 327 622 208 524Z" fill="#121D1D" stroke="#8CEBD4" stroke-opacity=".35" stroke-width="3"/>
+  <circle cx="622" cy="460" r="130" fill="#DCE8E4"/>
+  <circle cx="622" cy="460" r="68" fill="#0A0E0F"/>
+  <path d="M624 158V252M624 668V760M318 260L386 328M922 592L1004 674M316 668L398 586M924 328L1002 250" stroke="#8CEBD4" stroke-opacity=".55" stroke-width="4"/>
+  <path d="M144 200H368M1032 204H1258M156 714H412M1020 714H1258" stroke="#EDF4F0" stroke-opacity=".18" stroke-width="3"/>
+  <text x="100" y="825" fill="#EDF4F0" fill-opacity=".38" font-family="Bahnschrift, Arial" font-size="34">AIGC EXPERIMENT</text>
+</svg>

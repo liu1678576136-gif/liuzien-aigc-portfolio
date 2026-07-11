@@ -1,0 +1,11 @@
+<svg width="1400" height="875" viewBox="0 0 1400 875" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="875" fill="#070A0B"/>
+  <path d="M88 132H1312V744H88V132Z" fill="#0E1414" stroke="#DDE9E5" stroke-opacity=".14"/>
+  <path d="M164 210H610V666H164V210Z" fill="#E3ECE8"/>
+  <path d="M218 270H556V386H218V270Z" fill="#0B1010"/>
+  <path d="M218 430H556V466H218V430ZM218 504H464V540H218V504ZM218 578H522V614H218V578Z" fill="#0B1010"/>
+  <path d="M704 214H1198V338H704V214ZM704 394H1198V518H704V394ZM704 574H1198V698H704V574Z" fill="#141D1D" stroke="#8CEBD4" stroke-opacity=".24"/>
+  <path d="M746 276H1112M746 456H1158M746 636H1060" stroke="#8CEBD4" stroke-opacity=".55" stroke-width="5"/>
+  <path d="M1147 267L1188 302L1147 337M1147 447L1188 482L1147 517M1147 627L1188 662L1147 697" stroke="#EDF4F0" stroke-opacity=".34" stroke-width="4"/>
+  <text x="164" y="126" fill="#EDF4F0" fill-opacity=".38" font-family="Bahnschrift, Arial" font-size="34">ECOMMERCE VISUAL</text>
+</svg>

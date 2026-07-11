@@ -1,0 +1,20 @@
+<svg width="960" height="1120" viewBox="0 0 960 1120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="1120" fill="#070A0B"/>
+  <path d="M114 0H960V1120H114V0Z" fill="#0D1414"/>
+  <path d="M0 958C220 830 267 610 404 481C518 374 643 372 738 263C804 187 824 89 830 0H960V1120H0V958Z" fill="#111A1A"/>
+  <path d="M612 308C612 383 553 444 480 444C407 444 348 383 348 308C348 233 407 172 480 172C553 172 612 233 612 308Z" fill="#D7E5E0"/>
+  <path d="M301 852C314 624 382 497 481 497C580 497 646 624 660 852H301Z" fill="#D7E5E0"/>
+  <path d="M352 545C389 517 432 503 480 503C529 503 573 518 610 548C562 590 521 611 487 611C450 611 405 589 352 545Z" fill="#0B1010"/>
+  <path d="M108 166H282M108 218H332M108 270H226" stroke="#8CEBD4" stroke-opacity=".44" stroke-width="2"/>
+  <path d="M752 762H852M701 812H852M640 862H852" stroke="#EDF4F0" stroke-opacity=".18" stroke-width="2"/>
+  <path d="M0 0H960V1120H0V0Z" fill="url(#grain)" opacity=".22"/>
+  <rect x="40" y="40" width="880" height="1040" stroke="#D5E7E2" stroke-opacity=".12"/>
+  <defs>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="4" stitchTiles="stitch"/>
+    </filter>
+    <pattern id="grain" width="180" height="180" patternUnits="userSpaceOnUse">
+      <rect width="180" height="180" filter="url(#noise)" opacity=".34"/>
+    </pattern>
+  </defs>
+</svg>

@@ -1,0 +1,732 @@
+{
+  "source": "C:\\Users\\\u5218\u5927\u4fa0\\Desktop\\AIGC\\\u5b9a4.mp4",
+  "createdAt": "2026-06-18T14:50:59.067710+00:00",
+  "frameCount": 180,
+  "width": 1920,
+  "format": "webp",
+  "quality": 88,
+  "audio": "ignored",
+  "poster": "poster.webp",
+  "frames": [
+    {
+      "index": 0,
+      "src": "frame_0001.webp"
+    },
+    {
+      "index": 1,
+      "src": "frame_0002.webp"
+    },
+    {
+      "index": 2,
+      "src": "frame_0003.webp"
+    },
+    {
+      "index": 3,
+      "src": "frame_0004.webp"
+    },
+    {
+      "index": 4,
+      "src": "frame_0005.webp"
+    },
+    {
+      "index": 5,
+      "src": "frame_0006.webp"
+    },
+    {
+      "index": 6,
+      "src": "frame_0007.webp"
+    },
+    {
+      "index": 7,
+      "src": "frame_0008.webp"
+    },
+    {
+      "index": 8,
+      "src": "frame_0009.webp"
+    },
+    {
+      "index": 9,
+      "src": "frame_0010.webp"
+    },
+    {
+      "index": 10,
+      "src": "frame_0011.webp"
+    },
+    {
+      "index": 11,
+      "src": "frame_0012.webp"
+    },
+    {
+      "index": 12,
+      "src": "frame_0013.webp"
+    },
+    {
+      "index": 13,
+      "src": "frame_0014.webp"
+    },
+    {
+      "index": 14,
+      "src": "frame_0015.webp"
+    },
+    {
+      "index": 15,
+      "src": "frame_0016.webp"
+    },
+    {
+      "index": 16,
+      "src": "frame_0017.webp"
+    },
+    {
+      "index": 17,
+      "src": "frame_0018.webp"
+    },
+    {
+      "index": 18,
+      "src": "frame_0019.webp"
+    },
+    {
+      "index": 19,
+      "src": "frame_0020.webp"
+    },
+    {
+      "index": 20,
+      "src": "frame_0021.webp"
+    },
+    {
+      "index": 21,
+      "src": "frame_0022.webp"
+    },
+    {
+      "index": 22,
+      "src": "frame_0023.webp"
+    },
+    {
+      "index": 23,
+      "src": "frame_0024.webp"
+    },
+    {
+      "index": 24,
+      "src": "frame_0025.webp"
+    },
+    {
+      "index": 25,
+      "src": "frame_0026.webp"
+    },
+    {
+      "index": 26,
+      "src": "frame_0027.webp"
+    },
+    {
+      "index": 27,
+      "src": "frame_0028.webp"
+    },
+    {
+      "index": 28,
+      "src": "frame_0029.webp"
+    },
+    {
+      "index": 29,
+      "src": "frame_0030.webp"
+    },
+    {
+      "index": 30,
+      "src": "frame_0031.webp"
+    },
+    {
+      "index": 31,
+      "src": "frame_0032.webp"
+    },
+    {
+      "index": 32,
+      "src": "frame_0033.webp"
+    },
+    {
+      "index": 33,
+      "src": "frame_0034.webp"
+    },
+    {
+      "index": 34,
+      "src": "frame_0035.webp"
+    },
+    {
+      "index": 35,
+      "src": "frame_0036.webp"
+    },
+    {
+      "index": 36,
+      "src": "frame_0037.webp"
+    },
+    {
+      "index": 37,
+      "src": "frame_0038.webp"
+    },
+    {
+      "index": 38,
+      "src": "frame_0039.webp"
+    },
+    {
+      "index": 39,
+      "src": "frame_0040.webp"
+    },
+    {
+      "index": 40,
+      "src": "frame_0041.webp"
+    },
+    {
+      "index": 41,
+      "src": "frame_0042.webp"
+    },
+    {
+      "index": 42,
+      "src": "frame_0043.webp"
+    },
+    {
+      "index": 43,
+      "src": "frame_0044.webp"
+    },
+    {
+      "index": 44,
+      "src": "frame_0045.webp"
+    },
+    {
+      "index": 45,
+      "src": "frame_0046.webp"
+    },
+    {
+      "index": 46,
+      "src": "frame_0047.webp"
+    },
+    {
+      "index": 47,
+      "src": "frame_0048.webp"
+    },
+    {
+      "index": 48,
+      "src": "frame_0049.webp"
+    },
+    {
+      "index": 49,
+      "src": "frame_0050.webp"
+    },
+    {
+      "index": 50,
+      "src": "frame_0051.webp"
+    },
+    {
+      "index": 51,
+      "src": "frame_0052.webp"
+    },
+    {
+      "index": 52,
+      "src": "frame_0053.webp"
+    },
+    {
+      "index": 53,
+      "src": "frame_0054.webp"
+    },
+    {
+      "index": 54,
+      "src": "frame_0055.webp"
+    },
+    {
+      "index": 55,
+      "src": "frame_0056.webp"
+    },
+    {
+      "index": 56,
+      "src": "frame_0057.webp"
+    },
+    {
+      "index": 57,
+      "src": "frame_0058.webp"
+    },
+    {
+      "index": 58,
+      "src": "frame_0059.webp"
+    },
+    {
+      "index": 59,
+      "src": "frame_0060.webp"
+    },
+    {
+      "index": 60,
+      "src": "frame_0061.webp"
+    },
+    {
+      "index": 61,
+      "src": "frame_0062.webp"
+    },
+    {
+      "index": 62,
+      "src": "frame_0063.webp"
+    },
+    {
+      "index": 63,
+      "src": "frame_0064.webp"
+    },
+    {
+      "index": 64,
+      "src": "frame_0065.webp"
+    },
+    {
+      "index": 65,
+      "src": "frame_0066.webp"
+    },
+    {
+      "index": 66,
+      "src": "frame_0067.webp"
+    },
+    {
+      "index": 67,
+      "src": "frame_0068.webp"
+    },
+    {
+      "index": 68,
+      "src": "frame_0069.webp"
+    },
+    {
+      "index": 69,
+      "src": "frame_0070.webp"
+    },
+    {
+      "index": 70,
+      "src": "frame_0071.webp"
+    },
+    {
+      "index": 71,
+      "src": "frame_0072.webp"
+    },
+    {
+      "index": 72,
+      "src": "frame_0073.webp"
+    },
+    {
+      "index": 73,
+      "src": "frame_0074.webp"
+    },
+    {
+      "index": 74,
+      "src": "frame_0075.webp"
+    },
+    {
+      "index": 75,
+      "src": "frame_0076.webp"
+    },
+    {
+      "index": 76,
+      "src": "frame_0077.webp"
+    },
+    {
+      "index": 77,
+      "src": "frame_0078.webp"
+    },
+    {
+      "index": 78,
+      "src": "frame_0079.webp"
+    },
+    {
+      "index": 79,
+      "src": "frame_0080.webp"
+    },
+    {
+      "index": 80,
+      "src": "frame_0081.webp"
+    },
+    {
+      "index": 81,
+      "src": "frame_0082.webp"
+    },
+    {
+      "index": 82,
+      "src": "frame_0083.webp"
+    },
+    {
+      "index": 83,
+      "src": "frame_0084.webp"
+    },
+    {
+      "index": 84,
+      "src": "frame_0085.webp"
+    },
+    {
+      "index": 85,
+      "src": "frame_0086.webp"
+    },
+    {
+      "index": 86,
+      "src": "frame_0087.webp"
+    },
+    {
+      "index": 87,
+      "src": "frame_0088.webp"
+    },
+    {
+      "index": 88,
+      "src": "frame_0089.webp"
+    },
+    {
+      "index": 89,
+      "src": "frame_0090.webp"
+    },
+    {
+      "index": 90,
+      "src": "frame_0091.webp"
+    },
+    {
+      "index": 91,
+      "src": "frame_0092.webp"
+    },
+    {
+      "index": 92,
+      "src": "frame_0093.webp"
+    },
+    {
+      "index": 93,
+      "src": "frame_0094.webp"
+    },
+    {
+      "index": 94,
+      "src": "frame_0095.webp"
+    },
+    {
+      "index": 95,
+      "src": "frame_0096.webp"
+    },
+    {
+      "index": 96,
+      "src": "frame_0097.webp"
+    },
+    {
+      "index": 97,
+      "src": "frame_0098.webp"
+    },
+    {
+      "index": 98,
+      "src": "frame_0099.webp"
+    },
+    {
+      "index": 99,
+      "src": "frame_0100.webp"
+    },
+    {
+      "index": 100,
+      "src": "frame_0101.webp"
+    },
+    {
+      "index": 101,
+      "src": "frame_0102.webp"
+    },
+    {
+      "index": 102,
+      "src": "frame_0103.webp"
+    },
+    {
+      "index": 103,
+      "src": "frame_0104.webp"
+    },
+    {
+      "index": 104,
+      "src": "frame_0105.webp"
+    },
+    {
+      "index": 105,
+      "src": "frame_0106.webp"
+    },
+    {
+      "index": 106,
+      "src": "frame_0107.webp"
+    },
+    {
+      "index": 107,
+      "src": "frame_0108.webp"
+    },
+    {
+      "index": 108,
+      "src": "frame_0109.webp"
+    },
+    {
+      "index": 109,
+      "src": "frame_0110.webp"
+    },
+    {
+      "index": 110,
+      "src": "frame_0111.webp"
+    },
+    {
+      "index": 111,
+      "src": "frame_0112.webp"
+    },
+    {
+      "index": 112,
+      "src": "frame_0113.webp"
+    },
+    {
+      "index": 113,
+      "src": "frame_0114.webp"
+    },
+    {
+      "index": 114,
+      "src": "frame_0115.webp"
+    },
+    {
+      "index": 115,
+      "src": "frame_0116.webp"
+    },
+    {
+      "index": 116,
+      "src": "frame_0117.webp"
+    },
+    {
+      "index": 117,
+      "src": "frame_0118.webp"
+    },
+    {
+      "index": 118,
+      "src": "frame_0119.webp"
+    },
+    {
+      "index": 119,
+      "src": "frame_0120.webp"
+    },
+    {
+      "index": 120,
+      "src": "frame_0121.webp"
+    },
+    {
+      "index": 121,
+      "src": "frame_0122.webp"
+    },
+    {
+      "index": 122,
+      "src": "frame_0123.webp"
+    },
+    {
+      "index": 123,
+      "src": "frame_0124.webp"
+    },
+    {
+      "index": 124,
+      "src": "frame_0125.webp"
+    },
+    {
+      "index": 125,
+      "src": "frame_0126.webp"
+    },
+    {
+      "index": 126,
+      "src": "frame_0127.webp"
+    },
+    {
+      "index": 127,
+      "src": "frame_0128.webp"
+    },
+    {
+      "index": 128,
+      "src": "frame_0129.webp"
+    },
+    {
+      "index": 129,
+      "src": "frame_0130.webp"
+    },
+    {
+      "index": 130,
+      "src": "frame_0131.webp"
+    },
+    {
+      "index": 131,
+      "src": "frame_0132.webp"
+    },
+    {
+      "index": 132,
+      "src": "frame_0133.webp"
+    },
+    {
+      "index": 133,
+      "src": "frame_0134.webp"
+    },
+    {
+      "index": 134,
+      "src": "frame_0135.webp"
+    },
+    {
+      "index": 135,
+      "src": "frame_0136.webp"
+    },
+    {
+      "index": 136,
+      "src": "frame_0137.webp"
+    },
+    {
+      "index": 137,
+      "src": "frame_0138.webp"
+    },
+    {
+      "index": 138,
+      "src": "frame_0139.webp"
+    },
+    {
+      "index": 139,
+      "src": "frame_0140.webp"
+    },
+    {
+      "index": 140,
+      "src": "frame_0141.webp"
+    },
+    {
+      "index": 141,
+      "src": "frame_0142.webp"
+    },
+    {
+      "index": 142,
+      "src": "frame_0143.webp"
+    },
+    {
+      "index": 143,
+      "src": "frame_0144.webp"
+    },
+    {
+      "index": 144,
+      "src": "frame_0145.webp"
+    },
+    {
+      "index": 145,
+      "src": "frame_0146.webp"
+    },
+    {
+      "index": 146,
+      "src": "frame_0147.webp"
+    },
+    {
+      "index": 147,
+      "src": "frame_0148.webp"
+    },
+    {
+      "index": 148,
+      "src": "frame_0149.webp"
+    },
+    {
+      "index": 149,
+      "src": "frame_0150.webp"
+    },
+    {
+      "index": 150,
+      "src": "frame_0151.webp"
+    },
+    {
+      "index": 151,
+      "src": "frame_0152.webp"
+    },
+    {
+      "index": 152,
+      "src": "frame_0153.webp"
+    },
+    {
+      "index": 153,
+      "src": "frame_0154.webp"
+    },
+    {
+      "index": 154,
+      "src": "frame_0155.webp"
+    },
+    {
+      "index": 155,
+      "src": "frame_0156.webp"
+    },
+    {
+      "index": 156,
+      "src": "frame_0157.webp"
+    },
+    {
+      "index": 157,
+      "src": "frame_0158.webp"
+    },
+    {
+      "index": 158,
+      "src": "frame_0159.webp"
+    },
+    {
+      "index": 159,
+      "src": "frame_0160.webp"
+    },
+    {
+      "index": 160,
+      "src": "frame_0161.webp"
+    },
+    {
+      "index": 161,
+      "src": "frame_0162.webp"
+    },
+    {
+      "index": 162,
+      "src": "frame_0163.webp"
+    },
+    {
+      "index": 163,
+      "src": "frame_0164.webp"
+    },
+    {
+      "index": 164,
+      "src": "frame_0165.webp"
+    },
+    {
+      "index": 165,
+      "src": "frame_0166.webp"
+    },
+    {
+      "index": 166,
+      "src": "frame_0167.webp"
+    },
+    {
+      "index": 167,
+      "src": "frame_0168.webp"
+    },
+    {
+      "index": 168,
+      "src": "frame_0169.webp"
+    },
+    {
+      "index": 169,
+      "src": "frame_0170.webp"
+    },
+    {
+      "index": 170,
+      "src": "frame_0171.webp"
+    },
+    {
+      "index": 171,
+      "src": "frame_0172.webp"
+    },
+    {
+      "index": 172,
+      "src": "frame_0173.webp"
+    },
+    {
+      "index": 173,
+      "src": "frame_0174.webp"
+    },
+    {
+      "index": 174,
+      "src": "frame_0175.webp"
+    },
+    {
+      "index": 175,
+      "src": "frame_0176.webp"
+    },
+    {
+      "index": 176,
+      "src": "frame_0177.webp"
+    },
+    {
+      "index": 177,
+      "src": "frame_0178.webp"
+    },
+    {
+      "index": 178,
+      "src": "frame_0179.webp"
+    },
+    {
+      "index": 179,
+      "src": "frame_0180.webp"
+    }
+  ]
+}
