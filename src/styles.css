@@ -189,6 +189,7 @@ img {
 }
 
 .season-video-stack,
+.season-poster,
 .season-video {
   position: absolute;
   inset: 0;
@@ -208,6 +209,17 @@ img {
   transform: scale(1.055);
   filter: saturate(0.92) contrast(1.02);
   transition: opacity 520ms ease, transform 980ms ease, filter 520ms ease;
+}
+
+.season-poster {
+  z-index: 0;
+  display: block;
+  object-fit: cover;
+  filter: saturate(1.04) contrast(1.04);
+}
+
+.season-video {
+  z-index: 1;
 }
 
 .season-video.is-active {

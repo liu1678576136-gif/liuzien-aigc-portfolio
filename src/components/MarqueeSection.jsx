@@ -1,8 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { ExternalLink, X } from "lucide-react";
 
+const marqueePoster = (filename) => `/assets/marquee/posters/${filename.replace(/\.mp4$/i, ".jpg")}`;
+
 const mediaItems = [
-  "https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif",
+  {
+    src: "/assets/marquee/cancer-cake-poster.jpg",
+    label: "CANCER CAKE POSTER",
+    type: "image",
+  },
   {
     src: "/assets/marquee/july-06-motion.mp4",
     poster: "/assets/marquee/july-06-poster.png",
@@ -11,37 +17,55 @@ const mediaItems = [
   },
   {
     src: "/assets/marquee/starry-sky-motion.mp4",
+    poster: marqueePoster("starry-sky-motion.mp4"),
     label: "STARRY SKY MOTION",
     type: "video",
   },
   {
     src: "/assets/marquee/spring-commercial-motion.mp4",
+    poster: marqueePoster("spring-commercial-motion.mp4"),
     label: "SPRING COMMERCIAL MOTION",
     type: "video",
   },
   {
     src: "/assets/marquee/ding4-marquee-motion.mp4",
+    poster: marqueePoster("ding4-marquee-motion.mp4"),
     label: "DING 4 MOTION",
     type: "video",
   },
   {
     src: "/assets/marquee/june-07-motion.mp4",
+    poster: marqueePoster("june-07-motion.mp4"),
     label: "JUNE 07 MOTION",
     type: "video",
   },
   {
     src: "/assets/marquee/skincare-ad-motion.mp4",
+    poster: marqueePoster("skincare-ad-motion.mp4"),
     label: "SKINCARE AD MOTION",
     type: "video",
   },
   {
     src: "/assets/marquee/tech-ecommerce-ad-motion.mp4",
+    poster: marqueePoster("tech-ecommerce-ad-motion.mp4"),
     label: "TECH ECOMMERCE AD MOTION",
     type: "video",
   },
-  "https://motionsites.ai/assets/hero-skyelite-preview-DHaZIgUv.gif",
-  "https://motionsites.ai/assets/hero-aethera-preview-DknSlcTa.gif",
-  "https://motionsites.ai/assets/hero-designpro-preview-D8c5_een.gif",
+  {
+    src: "/assets/marquee/running-wall-poster.jpg",
+    label: "RUNNING WALL POSTER",
+    type: "image",
+  },
+  {
+    src: "/assets/marquee/sports-opening-poster.jpg",
+    label: "SPORTS OPENING POSTER",
+    type: "image",
+  },
+  {
+    src: "/assets/marquee/shoes-cny-men-display.jpg",
+    label: "SHOES CNY MEN DISPLAY",
+    type: "image",
+  },
   {
     src: "/assets/marquee/tianwang-38-festival.jpg",
     label: "TIANWANG 38 FESTIVAL",
@@ -84,16 +108,21 @@ const mediaItems = [
   },
   {
     src: "/assets/marquee/x3-poster-motion.mp4",
+    poster: marqueePoster("x3-poster-motion.mp4"),
     label: "X3 POSTER MOTION",
     type: "video",
   },
-  "https://motionsites.ai/assets/hero-celestia-preview-0yO3jXO8.gif",
+  {
+    src: "/assets/marquee/kangming-womens-day-poster.jpg",
+    label: "KANGMING WOMENS DAY POSTER",
+    type: "image",
+  },
 ];
 
 const rowOneOrigin = mediaItems.slice(0, 11);
 const rowTwoOrigin = mediaItems.slice(11);
-const rowOneItems = [...rowOneOrigin, ...rowOneOrigin, ...rowOneOrigin];
-const rowTwoItems = [...rowTwoOrigin, ...rowTwoOrigin, ...rowTwoOrigin];
+const rowOneItems = rowOneOrigin;
+const rowTwoItems = rowTwoOrigin;
 
 function getMediaSource(item) {
   return typeof item === "string" ? item : item.src;
@@ -121,10 +150,16 @@ function getMediaLabel(item) {
     .toUpperCase();
 }
 
+function getCardImage(item) {
+  if (typeof item === "string") return item;
+  return item.poster ?? item.src;
+}
+
 export function MarqueeSection() {
   const sectionRef = useRef(null);
   const rowOneRef = useRef(null);
   const rowTwoRef = useRef(null);
+  const isVisibleRef = useRef(false);
   const [activeMedia, setActiveMedia] = useState(null);
 
   useEffect(() => {
@@ -137,7 +172,7 @@ export function MarqueeSection() {
       const section = sectionRef.current;
       const rowOne = rowOneRef.current;
       const rowTwo = rowTwoRef.current;
-      if (!section || !rowOne || !rowTwo) return;
+      if (!section || !rowOne || !rowTwo || !isVisibleRef.current) return;
 
       const offset = (window.scrollY - section.offsetTop + window.innerHeight) * 0.3;
       const travel = offset - 200;
@@ -151,12 +186,21 @@ export function MarqueeSection() {
       raf = window.requestAnimationFrame(updateRows);
     };
 
-    updateRows();
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+        if (entry.isIntersecting) requestUpdate();
+      },
+      { rootMargin: "240px 0px" },
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
 
     return () => {
       window.cancelAnimationFrame(raf);
+      observer.disconnect();
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
     };
@@ -197,20 +241,7 @@ export function MarqueeSection() {
         onClick={() => setActiveMedia(media)}
         aria-label={`Open ${label} preview`}
       >
-        {type === "video" ? (
-          <video
-            src={src}
-            poster={poster}
-            muted
-            loop
-            autoPlay
-            playsInline
-            preload="auto"
-            aria-hidden="true"
-          />
-        ) : (
-          <img src={src} alt="" loading="lazy" decoding="async" />
-        )}
+        <img src={getCardImage(item)} alt="" loading="lazy" decoding="async" />
       </button>
     );
   };
@@ -237,7 +268,7 @@ export function MarqueeSection() {
             </div>
 
             {activeMedia.type === "video" ? (
-              <video src={activeMedia.src} controls muted loop autoPlay playsInline poster={activeMedia.poster} />
+              <video src={activeMedia.src} controls muted loop autoPlay playsInline preload="metadata" poster={activeMedia.poster} />
             ) : (
               <img src={activeMedia.src} alt={activeMedia.label} />
             )}

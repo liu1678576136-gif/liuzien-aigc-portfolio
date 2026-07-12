@@ -25,14 +25,14 @@ async function walk(directory) {
 async function optimizeImage(filePath, extension) {
   const temporaryPath = `${filePath}.optimized${extension}`;
   const image = sharp(filePath, { animated: false }).resize({
-    width: 2200,
+    width: 1800,
     withoutEnlargement: true,
   });
 
   if (extension === ".jpg" || extension === ".jpeg") {
-    await image.jpeg({ quality: 84, mozjpeg: true }).toFile(temporaryPath);
+    await image.jpeg({ quality: 78, mozjpeg: true, progressive: true }).toFile(temporaryPath);
   } else {
-    await image.png({ compressionLevel: 9, palette: true, quality: 88 }).toFile(temporaryPath);
+    await image.png({ compressionLevel: 9, palette: true, quality: 82 }).toFile(temporaryPath);
   }
 
   await rename(temporaryPath, filePath);

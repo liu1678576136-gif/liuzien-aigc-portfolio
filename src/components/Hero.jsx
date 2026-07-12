@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { navItems, profile, seasonCarousel } from "../data/portfolio.js";
 import { IntroCounter } from "./IntroCounter.jsx";
@@ -6,8 +6,11 @@ import { FadeIn } from "./TemplatePrimitives.jsx";
 
 export function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const videoRefs = useRef([]);
+  const [isVideoMounted, setIsVideoMounted] = useState(false);
   const activeSlide = seasonCarousel.slides[activeIndex];
+  const activePoster = activeSlide.src
+    .replace("/season-carousel/", "/season-carousel/posters/")
+    .replace(/\.mp4$/i, ".jpg");
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -18,18 +21,10 @@ export function Hero() {
   }, []);
 
   useEffect(() => {
-    videoRefs.current.forEach((video, index) => {
-      if (!video) return;
+    setIsVideoMounted(false);
+    const timeout = window.setTimeout(() => setIsVideoMounted(true), activeIndex === 0 ? 350 : 0);
 
-      if (index === activeIndex) {
-        video.currentTime = video.currentTime || 0;
-        video.play().catch(() => {});
-        return;
-      }
-
-      video.pause();
-      video.currentTime = 0;
-    });
+    return () => window.clearTimeout(timeout);
   }, [activeIndex]);
 
   const goToSlide = (index) => {
@@ -42,24 +37,29 @@ export function Hero() {
       id="hero"
       aria-label="AIGC seasonal motion poster carousel"
       style={{ "--season-accent": activeSlide.accent }}
-    >
-      <IntroCounter />
+      >
+        <IntroCounter />
       <div className="season-video-stack" aria-hidden="true">
-        {seasonCarousel.slides.map((slide, index) => (
+        <img
+          className="season-poster"
+          src={activePoster}
+          alt=""
+          fetchPriority="high"
+        />
+        {isVideoMounted ? (
           <video
-            className={`season-video ${index === activeIndex ? "is-active" : ""}`}
-            key={slide.season}
-            ref={(node) => {
-              videoRefs.current[index] = node;
-            }}
+            className="season-video is-active"
+            key={activeSlide.season}
             muted
             loop
+            autoPlay
             playsInline
-            preload={index === 0 ? "auto" : "metadata"}
+            preload="metadata"
+            poster={activePoster}
           >
-            <source src={slide.src} type="video/mp4" />
+            <source src={activeSlide.src} type="video/mp4" />
           </video>
-        ))}
+        ) : null}
       </div>
       <div className="carousel-vignette" aria-hidden="true" />
 
