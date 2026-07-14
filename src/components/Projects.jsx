@@ -6,9 +6,12 @@ import ScrollStack, { ScrollStackItem } from "./ScrollStack.jsx";
 
 export function Projects() {
   const [activePreview, setActivePreview] = useState(null);
+  const [isPreviewLoading, setIsPreviewLoading] = useState(false);
 
   useEffect(() => {
     if (!activePreview) return undefined;
+
+    setIsPreviewLoading(true);
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
@@ -28,6 +31,7 @@ export function Projects() {
   const openPreview = (project, image, imageIndex) => {
     const previewImage = project.previewImages?.[imageIndex] ?? image;
 
+    setIsPreviewLoading(true);
     setActivePreview({
       src: previewImage,
       title: project.title,
@@ -111,7 +115,7 @@ export function Projects() {
       {activePreview ? (
         <div className="project-preview-layer" role="dialog" aria-modal="true" aria-label={activePreview.label}>
           <button className="project-preview-backdrop" type="button" onClick={() => setActivePreview(null)} aria-label="Close project preview" />
-          <div className={`project-preview-panel${activePreview.isLongForm ? " project-preview-panel-scroll" : ""}`}>
+          <div className={`project-preview-panel${activePreview.isLongForm ? " project-preview-panel-scroll" : ""}${isPreviewLoading ? " is-loading" : " is-ready"}`}>
             <div className="project-preview-top">
               <div>
                 <p>{activePreview.category}</p>
@@ -122,7 +126,20 @@ export function Projects() {
               </button>
             </div>
 
-            <img src={activePreview.src} alt={activePreview.label} />
+            {isPreviewLoading ? (
+              <div className="preview-loading-state" role="status" aria-live="polite">
+                <span />
+                <p>Loading preview</p>
+              </div>
+            ) : null}
+
+            <img
+              className="preview-media"
+              src={activePreview.src}
+              alt={activePreview.label}
+              onLoad={() => setIsPreviewLoading(false)}
+              onError={() => setIsPreviewLoading(false)}
+            />
 
             <a href={activePreview.src} target="_blank" rel="noreferrer">
               OPEN ORIGINAL

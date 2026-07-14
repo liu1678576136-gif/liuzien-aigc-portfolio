@@ -20,23 +20,38 @@ const careerItems = [
     period: "2024.08-2026.04",
     company: "天王电子（深圳）有限公司",
     role: "AIGC 设计师",
-    text: "负责公司抖音店铺视觉设计与装修，完成电商节日活动主视觉、专题页、二级页、推广素材及商品相关设计；协同运营与推广团队制作宣传图及直播间物料；分析竞品优势，优化商品卡点击率与曝光率，并将 AI 文生图技术应用于电商视觉生产。",
+    text: "负责抖音店铺视觉设计与装修，完成电商节日活动主视觉、专题页、二级页、推广素材及商品相关设计；协同运营与推广团队制作宣传图及直播间物料，并将 AI 文生图技术应用于电商视觉生产。",
   },
   {
     period: "2022.05-2024.04",
     company: "中国特步（深圳加速度体育用品有限公司）",
     role: "企划设计师",
-    text: "承接集团季度推广物料并统筹门店安装布置；依据促销计划制定全年销售节点及促销海报方案，重点跟进大型节日重点门店的促销布展；衔接广告公司，完成物料下单、排版沟通及费用结算。",
+    text: "承接集团季度推广物料并统筹门店安装布置；依据促销计划制定全年销售节点及促销海报方案，重点跟进大型节日门店促销布展与物料执行。",
   },
   {
     period: "2018.08-2022.02",
     company: "宠控创新科技有限公司",
     role: "视觉设计师",
-    text: "负责运营视觉与品牌调性把控，输出线下品牌推广、促销广告、沙龙展会等物料设计，包括海报与 H5 邀请函；负责线上电商主图、详情页及 618 等节日活动主视觉设计。",
+    text: "负责运营视觉与品牌调性把控，输出线下品牌推广、促销广告、沙龙展会等物料设计，包括海报、H5 邀请函、线上电商主图、详情页及 618 等节日活动主视觉。",
   },
 ];
 
 export function AboutSection() {
+  const updatePortraitSpotlight = (event) => {
+    const card = event.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    card.style.setProperty("--spotlight-x", `${x}px`);
+    card.style.setProperty("--spotlight-y", `${y}px`);
+    card.style.setProperty("--spotlight-opacity", "1");
+  };
+
+  const hidePortraitSpotlight = (event) => {
+    event.currentTarget.style.setProperty("--spotlight-opacity", "0");
+  };
+
   return (
     <section className="about-section" id="about">
       <div className="about-shell">
@@ -49,33 +64,27 @@ export function AboutSection() {
         </FadeIn>
 
         <div className="about-grid">
-          <FadeIn
-            className="about-portrait-card portrait-reveal-card"
-            delay={0.08}
-            y={38}
-            onPointerMove={(event) => {
-              const rect = event.currentTarget.getBoundingClientRect();
-              event.currentTarget.style.setProperty("--spotlight-x", `${event.clientX - rect.left}px`);
-              event.currentTarget.style.setProperty("--spotlight-y", `${event.clientY - rect.top}px`);
-              event.currentTarget.style.setProperty("--spotlight-opacity", "1");
-            }}
-            onPointerLeave={(event) => {
-              event.currentTarget.style.setProperty("--spotlight-opacity", "0");
-            }}
-          >
-            <img
-              className="portrait-base-image"
-              src="/assets/professional-portrait-base.png"
-              alt="刘子恩职业形象"
-              loading="lazy"
-            />
-            <img
-              className="portrait-reveal-image"
-              src="/assets/professional-portrait.png"
-              alt=""
-              aria-hidden="true"
-              loading="lazy"
-            />
+          <FadeIn className="about-portrait-card" delay={0.08} y={38}>
+            <div
+              className="portrait-spotlight-card"
+              onPointerMove={updatePortraitSpotlight}
+              onPointerLeave={hidePortraitSpotlight}
+            >
+              <img
+                className="portrait-base"
+                src="/assets/professional-portrait.png"
+                alt="刘梓恩个人肖像"
+                loading="lazy"
+              />
+              <img
+                className="portrait-color"
+                src="/assets/professional-portrait.png"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <span className="spotlight-cursor" aria-hidden="true" />
+            </div>
           </FadeIn>
 
           <FadeIn className="about-profile-panel" delay={0.12} y={38}>

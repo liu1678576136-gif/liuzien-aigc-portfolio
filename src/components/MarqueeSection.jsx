@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ExternalLink, X } from "lucide-react";
 
 const marqueePoster = (filename) => `/assets/marquee/posters/${filename.replace(/\.mp4$/i, ".jpg")}`;
+const marqueePreview = (filename) => `/assets/marquee/previews/${filename}`;
 
 const mediaItems = [
   {
@@ -11,42 +12,49 @@ const mediaItems = [
   },
   {
     src: "/assets/marquee/july-06-motion.mp4",
+    previewSrc: marqueePreview("july-06-motion.mp4"),
     poster: "/assets/marquee/july-06-poster.png",
     label: "JULY 06 MOTION",
     type: "video",
   },
   {
     src: "/assets/marquee/starry-sky-motion.mp4",
+    previewSrc: marqueePreview("starry-sky-motion.mp4"),
     poster: marqueePoster("starry-sky-motion.mp4"),
     label: "STARRY SKY MOTION",
     type: "video",
   },
   {
     src: "/assets/marquee/spring-commercial-motion.mp4",
+    previewSrc: marqueePreview("spring-commercial-motion.mp4"),
     poster: marqueePoster("spring-commercial-motion.mp4"),
     label: "SPRING COMMERCIAL MOTION",
     type: "video",
   },
   {
     src: "/assets/marquee/ding4-marquee-motion.mp4",
+    previewSrc: marqueePreview("ding4-marquee-motion.mp4"),
     poster: marqueePoster("ding4-marquee-motion.mp4"),
     label: "DING 4 MOTION",
     type: "video",
   },
   {
     src: "/assets/marquee/june-07-motion.mp4",
+    previewSrc: marqueePreview("june-07-motion.mp4"),
     poster: marqueePoster("june-07-motion.mp4"),
     label: "JUNE 07 MOTION",
     type: "video",
   },
   {
     src: "/assets/marquee/skincare-ad-motion.mp4",
+    previewSrc: marqueePreview("skincare-ad-motion.mp4"),
     poster: marqueePoster("skincare-ad-motion.mp4"),
     label: "SKINCARE AD MOTION",
     type: "video",
   },
   {
     src: "/assets/marquee/tech-ecommerce-ad-motion.mp4",
+    previewSrc: marqueePreview("tech-ecommerce-ad-motion.mp4"),
     poster: marqueePoster("tech-ecommerce-ad-motion.mp4"),
     label: "TECH ECOMMERCE AD MOTION",
     type: "video",
@@ -108,6 +116,7 @@ const mediaItems = [
   },
   {
     src: "/assets/marquee/x3-poster-motion.mp4",
+    previewSrc: marqueePreview("x3-poster-motion.mp4"),
     poster: marqueePoster("x3-poster-motion.mp4"),
     label: "X3 POSTER MOTION",
     type: "video",
@@ -121,11 +130,15 @@ const mediaItems = [
 
 const rowOneOrigin = mediaItems.slice(0, 11);
 const rowTwoOrigin = mediaItems.slice(11);
-const rowOneItems = rowOneOrigin;
-const rowTwoItems = rowTwoOrigin;
+const rowOneItems = [...rowOneOrigin, ...rowOneOrigin, ...rowOneOrigin];
+const rowTwoItems = [...rowTwoOrigin, ...rowTwoOrigin, ...rowTwoOrigin];
 
 function getMediaSource(item) {
   return typeof item === "string" ? item : item.src;
+}
+
+function getMediaPreviewSource(item) {
+  return typeof item === "string" ? item : item.previewSrc ?? item.src;
 }
 
 function getMediaType(item) {
@@ -161,29 +174,37 @@ export function MarqueeSection() {
   const rowTwoRef = useRef(null);
   const isVisibleRef = useRef(false);
   const [activeMedia, setActiveMedia] = useState(null);
+  const [isPreviewLoading, setIsPreviewLoading] = useState(false);
 
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) return undefined;
 
-    let raf = 0;
+    let updateRaf = 0;
+    let scrollTravel = 0;
 
-    const updateRows = () => {
+    const renderRows = () => {
       const section = sectionRef.current;
       const rowOne = rowOneRef.current;
       const rowTwo = rowTwoRef.current;
       if (!section || !rowOne || !rowTwo || !isVisibleRef.current) return;
 
-      const offset = (window.scrollY - section.offsetTop + window.innerHeight) * 0.3;
-      const travel = offset - 200;
+      rowOne.style.transform = `translate3d(${scrollTravel}px, 0, 0)`;
+      rowTwo.style.transform = `translate3d(${-scrollTravel}px, 0, 0)`;
+    };
 
-      rowOne.style.transform = `translate3d(${travel}px, 0, 0)`;
-      rowTwo.style.transform = `translate3d(${-travel}px, 0, 0)`;
+    const updateRows = () => {
+      const section = sectionRef.current;
+      if (!section) return;
+
+      const offset = (window.scrollY - section.offsetTop + window.innerHeight) * 0.3;
+      scrollTravel = offset - 220;
+      renderRows();
     };
 
     const requestUpdate = () => {
-      window.cancelAnimationFrame(raf);
-      raf = window.requestAnimationFrame(updateRows);
+      window.cancelAnimationFrame(updateRaf);
+      updateRaf = window.requestAnimationFrame(updateRows);
     };
 
     const observer = new IntersectionObserver(
@@ -199,7 +220,7 @@ export function MarqueeSection() {
     window.addEventListener("resize", requestUpdate);
 
     return () => {
-      window.cancelAnimationFrame(raf);
+      window.cancelAnimationFrame(updateRaf);
       observer.disconnect();
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
@@ -208,6 +229,8 @@ export function MarqueeSection() {
 
   useEffect(() => {
     if (!activeMedia) return undefined;
+
+    setIsPreviewLoading(true);
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -238,10 +261,26 @@ export function MarqueeSection() {
         className="motion-marquee-card"
         key={`${src}-${index}`}
         type="button"
-        onClick={() => setActiveMedia(media)}
+        onClick={() => {
+          setIsPreviewLoading(true);
+          setActiveMedia(media);
+        }}
         aria-label={`Open ${label} preview`}
       >
-        <img src={getCardImage(item)} alt="" loading="lazy" decoding="async" />
+        {type === "video" ? (
+          <video
+            src={getMediaPreviewSource(item)}
+            poster={poster}
+            muted
+            loop
+            autoPlay
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+          />
+        ) : (
+          <img src={getCardImage(item)} alt="" loading="lazy" decoding="async" />
+        )}
       </button>
     );
   };
@@ -259,7 +298,7 @@ export function MarqueeSection() {
       {activeMedia ? (
         <div className="motion-preview-layer" role="dialog" aria-modal="true" aria-label={activeMedia.label}>
           <button className="motion-preview-backdrop" type="button" onClick={() => setActiveMedia(null)} aria-label="Close preview" />
-          <div className="motion-preview-panel">
+          <div className={`motion-preview-panel${isPreviewLoading ? " is-loading" : " is-ready"}`}>
             <div className="motion-preview-top">
               <p>{activeMedia.label}</p>
               <button type="button" onClick={() => setActiveMedia(null)} aria-label="Close preview">
@@ -267,10 +306,36 @@ export function MarqueeSection() {
               </button>
             </div>
 
+            {isPreviewLoading ? (
+              <div className="preview-loading-state" role="status" aria-live="polite">
+                <span />
+                <p>Loading preview</p>
+              </div>
+            ) : null}
+
             {activeMedia.type === "video" ? (
-              <video src={activeMedia.src} controls muted loop autoPlay playsInline preload="metadata" poster={activeMedia.poster} />
+              <video
+                className="preview-media"
+                src={activeMedia.src}
+                controls
+                muted
+                loop
+                autoPlay
+                playsInline
+                preload="auto"
+                poster={activeMedia.poster}
+                onLoadedData={() => setIsPreviewLoading(false)}
+                onCanPlay={() => setIsPreviewLoading(false)}
+                onError={() => setIsPreviewLoading(false)}
+              />
             ) : (
-              <img src={activeMedia.src} alt={activeMedia.label} />
+              <img
+                className="preview-media"
+                src={activeMedia.src}
+                alt={activeMedia.label}
+                onLoad={() => setIsPreviewLoading(false)}
+                onError={() => setIsPreviewLoading(false)}
+              />
             )}
 
             <a href={activeMedia.src} target="_blank" rel="noreferrer">

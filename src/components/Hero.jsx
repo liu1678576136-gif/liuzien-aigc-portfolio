@@ -4,6 +4,8 @@ import { navItems, profile, seasonCarousel } from "../data/portfolio.js";
 import { IntroCounter } from "./IntroCounter.jsx";
 import { FadeIn } from "./TemplatePrimitives.jsx";
 
+const AUTO_SLIDE_DELAY = 4200;
+
 export function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isVideoMounted, setIsVideoMounted] = useState(false);
@@ -13,12 +15,12 @@ export function Hero() {
     .replace(/\.mp4$/i, ".jpg");
 
   useEffect(() => {
-    const timer = window.setInterval(() => {
+    const timer = window.setTimeout(() => {
       setActiveIndex((current) => (current + 1) % seasonCarousel.slides.length);
-    }, 4200);
+    }, AUTO_SLIDE_DELAY);
 
-    return () => window.clearInterval(timer);
-  }, []);
+    return () => window.clearTimeout(timer);
+  }, [activeIndex]);
 
   useEffect(() => {
     setIsVideoMounted(false);

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "vite build && node scripts/generate-video-posters.mjs dist && node scripts/optimize-media.mjs dist/assets && node scripts/prune-deploy-assets.mjs && node scripts/prepare-sites-build.mjs",
+    "generate:marquee-previews": "node scripts/generate-marquee-previews.mjs",
     "optimize:media": "node scripts/optimize-media.mjs",
     "optimize:deploy-media": "node scripts/optimize-media.mjs dist/assets",
     "preview": "vite preview --host 127.0.0.1"
