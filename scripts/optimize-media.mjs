@@ -24,6 +24,7 @@ async function walk(directory) {
 
 async function optimizeImage(filePath, extension) {
   const temporaryPath = `${filePath}.optimized${extension}`;
+  const isPortrait = parse(filePath).name.startsWith("professional-portrait");
   const image = sharp(filePath, { animated: false }).resize({
     width: 1800,
     withoutEnlargement: true,
@@ -31,6 +32,9 @@ async function optimizeImage(filePath, extension) {
 
   if (extension === ".jpg" || extension === ".jpeg") {
     await image.jpeg({ quality: 78, mozjpeg: true, progressive: true }).toFile(temporaryPath);
+  } else if (isPortrait) {
+    // Palette quantization creates visible skin-tone blocks in photographic portraits.
+    await image.png({ compressionLevel: 9, adaptiveFiltering: true, palette: false }).toFile(temporaryPath);
   } else {
     await image.png({ compressionLevel: 9, palette: true, quality: 82 }).toFile(temporaryPath);
   }

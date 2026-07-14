@@ -20,7 +20,7 @@ export function Experience() {
       <div className="experience-grid">
         <BorderGlow className="experience-glow portrait-glow" animated fillOpacity={0.18}>
           <div className="portrait-panel">
-            <img src="/assets/professional-portrait.png" alt="刘梓恩职业照" />
+            <img src="/assets/professional-portrait-cleaned.png" alt="刘梓恩职业照" />
             <div className="portrait-caption">
               <span>Visual Designer</span>
               <strong>Shenzhen</strong>

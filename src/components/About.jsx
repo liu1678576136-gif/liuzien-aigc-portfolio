@@ -72,13 +72,13 @@ export function AboutSection() {
             >
               <img
                 className="portrait-base"
-                src="/assets/professional-portrait.png"
+                src="/assets/professional-portrait-cleaned.png"
                 alt="刘梓恩个人肖像"
                 loading="lazy"
               />
               <img
                 className="portrait-color"
-                src="/assets/professional-portrait.png"
+                src="/assets/professional-portrait-cleaned.png"
                 alt=""
                 aria-hidden="true"
                 loading="lazy"
